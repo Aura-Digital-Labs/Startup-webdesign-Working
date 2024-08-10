@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button"
 export function MainScreenLanding() {
   return (
     <div className="flex flex-col min-h-dvh">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
+      <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-white/20 shadow-md z-50">
         <Link href="#" className="flex items-center justify-center font-bold text-lg lg:text-xl pt-4 pl-0">
-          {/* <MountainIcon className="size-6" /> */}
           <span className="sr-only">Aura Digital Labs</span>
           <img
               src="/logo.png"
@@ -18,7 +17,6 @@ export function MainScreenLanding() {
               alt="Hero"
               className="mx-auto overflow-hidden rounded-t-xl object-cover pb-4"
             />
-          {/* Aura Digital Labs */}
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link href="#home" className="text-sm font-semibold hover:underline underline-offset-4 mt-1" prefetch={false}>
@@ -39,15 +37,22 @@ export function MainScreenLanding() {
           <Link href="#contact" className="text-sm font-semibold hover:underline underline-offset-4 mt-1" prefetch={false}>
             Contact
           </Link>
-          <Button className="h-7 px-3 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <Button 
+            className="h-7 px-3 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            style={{ borderRadius: '30px', overflow: 'hidden' }}
+          >
             Get Started
           </Button>
         </nav>
       </header>
+
       <section id="home" className="w-full pt-12 md:pt-16 lg:pt-20 border-y">
         <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
           <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16 mt-10">
             <div>
+            <div className="h-6 px-3 bg-primary/10 text-black font-extralight mb-3 inline-block"  style={{borderRadius: '30px', overflow: 'hidden'}}>
+              We transform your dreams
+            </div>
               <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
                 Unleash the Power of Digital Transformation
               </h1>
@@ -60,11 +65,12 @@ export function MainScreenLanding() {
                   <Input
                     type="text"
                     placeholder="Hi there, How can we help you?"
-                    className="flex-1 h-12 px-4 rounded-l-md border border-input focus:ring-1 focus:ring-primary focus:border-primary"
+                    className="flex-1 h-12 px-4 border border-input focus:ring-1 focus:ring-primary focus:border-primary"
+                    style={{borderRadius: '30px', overflow: 'hidden'}}
                   />
-                  <Button className="h-12 px-6 rounded-r-md bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-                    Get Started
-                  </Button>
+                <Button className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" style={{borderRadius: '30px', overflow: 'hidden'}}>
+                  Get Started
+                </Button>
                 </div>
               </div>
             </div>
@@ -74,7 +80,8 @@ export function MainScreenLanding() {
               width="1270"
               height="600"
               alt="Hero"
-              className="mx-auto aspect-[16/9] overflow-hidden rounded-t-xl object-cover pb-4"
+              style={{borderRadius: '10px', overflow: 'hidden'}}
+              className="mx-auto aspect-[16/10] overflow-hidden object-cover pb-4 transition-transform transition-filter duration-1000 ease-in-out hover:scale-105 hover:brightness-105"
             />
           </div>
         </div>
@@ -508,7 +515,7 @@ export function MainScreenLanding() {
         <Button
           variant="ghost"
           size="icon"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="bg-primary/30 text-primary-foreground hover:bg-primary/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring backdrop-blur-lg"
           // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ArrowUpIcon className="w-6 h-6" />
@@ -842,6 +849,26 @@ function ArrowUpIcon(props) {
     >
       <path d="m5 12 7-7 7 7" />
       <path d="M12 19V5" />
+    </svg>
+  )
+}
+
+function ArrowRightIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5l7 7-7 7" />
     </svg>
   )
 }
