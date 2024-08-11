@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 export function MainScreenLanding() {
   return (
     <div className="flex flex-col min-h-dvh">
-      <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-white/20 shadow-md z-50">
+      <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-white/20 shadow-sm z-50">
         <Link href="#" className="flex items-center justify-center font-bold text-lg lg:text-xl pt-4 pl-0">
           <span className="sr-only">Aura Digital Labs</span>
           <img
@@ -186,17 +186,29 @@ export function MainScreenLanding() {
         <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
           <span className="sr-only">View</span>
         </Link>
-        <img
-          src="/product.png"
-          alt="LUNA Robot"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
+        <div className="group relative w-full h-full">
+          <video
+            src="/hydrolink.mp4"
+            width={400}
+            height={400}
+            className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+            style={{ aspectRatio: "400/400", objectFit: "cover" }}
+            muted
+            loop
+            preload="metadata"
+            onLoadedMetadata={(e) => e.target.play()}
+            onMouseEnter={(e) => e.target.play()}
+            onMouseLeave={(e) => {
+              e.target.pause();
+              e.target.currentTime = 0;
+            }}
+          />
+        </div>
+
+
         <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">LUNA: Automated Restaurant Robot</h3>
-          <p className="text-sm text-muted-foreground">Vision-based robot for autonomous restaurant tasks using ROS and Kinect2.</p>
+          <h3 className="text-lg font-semibold">Hydrolink: Smart Water Tank</h3>
+          <p className="text-sm text-muted-foreground">HydroLink is an IoT device that transforms any domestic water tank into a smart one.</p>
         </div>
       </div>
 
