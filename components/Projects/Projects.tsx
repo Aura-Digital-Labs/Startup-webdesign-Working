@@ -28,7 +28,7 @@ export default function Projects({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [showPopup]); // Add showPopup to the dependency array
 
   return (
     <div
@@ -41,7 +41,7 @@ export default function Projects({
           width={400}
           height={400}
           className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "1 / 1" }} // aspect ratio for 400x400
+          style={{ aspectRatio: "1 / 1" }}
           muted
           loop
           preload="metadata"
@@ -66,6 +66,16 @@ export default function Projects({
             ref={popupRef}
             className="bg-background p-8 rounded-lg shadow-2xl text-black max-w-5xl w-full relative h-[80vh] overflow-auto transition-transform duration-500 ease-in-out transform scale-100 animate-popup popup-content"
           >
+            <button
+              className="absolute top-4 right-4 text-3xl text-gray-800"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevents click from propagating to the parent div
+                setShowPopup(false);
+              }}
+            >
+              &times;
+            </button>
+
             <h3 className="text-4xl font-bold mb-4 text-gray-900">{title}</h3>
             <p className="text-xl mb-4 text-gray-800">{description}</p>
             <p className="text-xl mb-6 text-gray-800">
