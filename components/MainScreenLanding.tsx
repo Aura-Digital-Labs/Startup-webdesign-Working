@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,7 +12,7 @@ export function MainScreenLanding() {
       <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-white/20 shadow-sm z-50">
         <Link href="#" className="flex items-center justify-center font-bold text-lg lg:text-xl pt-4 pl-0">
           <span className="sr-only">Aura Digital Labs</span>
-          <img
+          <Image
               src="/logo.png"
               width="60"
               height="40"
