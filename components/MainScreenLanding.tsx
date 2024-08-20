@@ -427,6 +427,91 @@ export function MainScreenLanding() {
         </div>
       </section>
 
+      <section id="awards" className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid gap-8 px-4 md:px-6 mx-auto">
+          <div className="space-y-3">
+            <h2 className="text-4xl font-bold mb-12 text-center">Awards</h2>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Recognizing excellence in our projects and contributions.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Award 1 */}
+            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img
+                src="/thropy.jpg"
+                alt="Award Trophy"
+                className="w-16 h-16 justify-self-center"
+              />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">
+                  Championship - SLIoT Challenge
+                </h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Hydrolink</li>
+                <li>All island Internet of Things competition</li>
+              </ul>
+            </div>
+
+            {/* Award 2 */}
+            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img
+                src="/thropy.jpg"
+                alt="Award Trophy"
+                className="w-16 h-16 justify-self-center"
+              />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">
+                  Championship - Sri Lanka Arduino Challenge
+                </h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Replace</li>
+                <li>IEEE Challenge sphere</li>
+              </ul>
+            </div>
+
+            {/* Award 3 */}
+            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img
+                src="/thropy.jpg"
+                alt="Award Trophy"
+                className="w-16 h-16 justify-self-center"
+              />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">
+                  1st Runnersup - Brainstorm
+                </h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Steer-Safe</li>
+                <li>Healthcare Innovation Competition</li>
+              </ul>
+            </div>
+
+            {/* Award 4 */}
+            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img
+                src="/thropy.jpg"
+                alt="Award Trophy"
+                className="w-16 h-16 justify-self-center"
+              />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">
+                  1st Runnersup - Aurora
+                </h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Face Canvas</li>
+                <li>AI Ideathlon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="team" className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 mx-auto">
           <div className="space-y-3">

@@ -33,7 +33,7 @@ export default function Projects({
   return (
     <div
       className="group relative overflow-hidden rounded-lg"
-      onMouseEnter={() => setShowPopup(true)}
+      onClick={() => setShowPopup(true)}
     >
       <div className="relative w-full h-full">
         <video
@@ -66,13 +66,6 @@ export default function Projects({
             ref={popupRef}
             className="bg-background p-8 rounded-lg shadow-2xl text-black max-w-5xl w-full relative h-[80vh] overflow-auto transition-transform duration-500 ease-in-out transform scale-100 animate-popup popup-content"
           >
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 text-gray-900 text-3xl font-bold hover:text-red-600 transition-colors duration-200"
-              aria-label="Close"
-            >
-              ×
-            </button>
             <h3 className="text-4xl font-bold mb-4 text-gray-900">{title}</h3>
             <p className="text-xl mb-4 text-gray-800">{description}</p>
             <p className="text-xl mb-6 text-gray-800">
