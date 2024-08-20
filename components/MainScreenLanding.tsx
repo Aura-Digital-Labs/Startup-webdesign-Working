@@ -12,12 +12,12 @@ export function MainScreenLanding() {
         <Link href="#" className="flex items-center justify-center font-bold text-lg lg:text-xl pt-4 pl-0">
           <span className="sr-only">Aura Digital Labs</span>
           <img
-              src="/logo.png"
-              width="60"
-              height="40"
-              alt="Hero"
-              className="mx-auto overflow-hidden rounded-t-xl object-cover pb-4"
-            />
+            src="/logo.png"
+            width="60"
+            height="40"
+            alt="Hero"
+            className="mx-auto overflow-hidden rounded-t-xl object-cover pb-4"
+          />
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link href="#home" className="text-sm font-semibold hover:underline underline-offset-4 mt-1" prefetch={false}>
@@ -38,7 +38,7 @@ export function MainScreenLanding() {
           <Link href="#contact" className="text-sm font-semibold hover:underline underline-offset-4 mt-1" prefetch={false}>
             Contact
           </Link>
-          <Button 
+          <Button
             className="h-7 px-3 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             style={{ borderRadius: '30px', overflow: 'hidden' }}
           >
@@ -51,9 +51,9 @@ export function MainScreenLanding() {
         <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
           <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16 mt-10">
             <div>
-            <div className="h-6 px-3 bg-primary/10 text-black font-extralight mb-3 inline-block"  style={{borderRadius: '30px', overflow: 'hidden'}}>
-              We transform your dreams
-            </div>
+              <div className="h-6 px-3 bg-primary/10 text-black font-extralight mb-3 inline-block" style={{ borderRadius: '30px', overflow: 'hidden' }}>
+                We transform your dreams
+              </div>
               <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
                 Unleash the Power of Digital Transformation
               </h1>
@@ -67,21 +67,21 @@ export function MainScreenLanding() {
                     type="text"
                     placeholder="Hi there, How can we help you?"
                     className="flex-1 h-12 px-4 border border-input focus:ring-1 focus:ring-primary focus:border-primary"
-                    style={{borderRadius: '30px', overflow: 'hidden'}}
+                    style={{ borderRadius: '30px', overflow: 'hidden' }}
                   />
-                <Button className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" style={{borderRadius: '30px', overflow: 'hidden'}}>
-                  Get Started
-                </Button>
+                  <Button className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" style={{ borderRadius: '30px', overflow: 'hidden' }}>
+                    Get Started
+                  </Button>
                 </div>
               </div>
             </div>
-  
+
             <img
               src="/banner_main.jpg"
               width="1270"
               height="600"
               alt="Hero"
-              style={{borderRadius: '10px', overflow: 'hidden'}}
+              style={{ borderRadius: '10px', overflow: 'hidden' }}
               className="mx-auto aspect-[16/10] overflow-hidden object-cover pb-4 transition-transform transition-filter duration-1000 ease-in-out hover:scale-105 hover:brightness-105"
             />
           </div>
@@ -182,314 +182,383 @@ export function MainScreenLanding() {
       </section>
 
       <section id="projects" className="pb-20 pt-20 bg-background">
-  <div className="container mx-auto">
-    <h2 className="text-4xl font-bold mb-12 text-center">Our Projects</h2>
-    <div className="container grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:px-6">
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <div className="group relative w-full h-full">
-          <video
-            src="/hydrolink.mp4"
-            width={400}
-            height={400}
-            className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-            style={{ aspectRatio: "400/400", objectFit: "cover" }}
-            muted
-            loop
-            preload="metadata"
-            onLoadedMetadata={(e) => e.target.play()}
-            onMouseEnter={(e) => e.target.play()}
-            onMouseLeave={(e) => {
-              e.target.pause();
-              e.target.currentTime = 0;
-            }}
-          />
-        </div>
-
-
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">Hydrolink: Smart Water Tank</h3>
-          <p className="text-sm text-muted-foreground">HydroLink is an IoT device that transforms any domestic water tank into a smart one.</p>
-        </div>
-      </div>
-
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <img
-          src="/product.png"
-          alt="TechBot"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">TechBot</h3>
-          <p className="text-sm text-muted-foreground">STM32-based competition robot with machine vision and custom PCB.</p>
-        </div>
-      </div>
-
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <img
-          src="/product.png"
-          alt="Cosmo Robot"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">Cosmo Robot</h3>
-          <p className="text-sm text-muted-foreground">Multi-functional robot with ATMEGA2560, featuring navigation and obstacle avoidance.</p>
-        </div>
-      </div>
-
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <img
-          src="/product.png"
-          alt="Criminal Face Generation"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">Criminal Face Generation</h3>
-          <p className="text-sm text-muted-foreground">AI-driven platform for forensic facial synthesis using stable diffusion models.</p>
-        </div>
-      </div>
-
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <img
-          src="/product.png"
-          alt="Vision-Language Navigation"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">Vision-Language Navigation</h3>
-          <p className="text-sm text-muted-foreground">SLAM system using vision-language inputs for robot navigation.</p>
-        </div>
-      </div>
-
-      <div className="group relative overflow-hidden rounded-lg">
-        <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-          <span className="sr-only">View</span>
-        </Link>
-        <img
-          src="/product.png"
-          alt="Ratatouille Micromouse"
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "400/400", objectFit: "cover" }}
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-          <h3 className="text-lg font-semibold">Ratatouille: Micromouse</h3>
-          <p className="text-sm text-muted-foreground">Fast micromouse for autonomous maze navigation using advanced sensors.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <section id="team" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid gap-8 px-4 md:px-6 mx-auto">
-        <div className="space-y-3">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Team</h2>
-          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Meet the talented individuals behind our success. Electronic and Telecommunications Engineering
-            Undergraduate University of Moratuwa.
-          </p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center">Our Projects</h2>
+          <div className="container grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:px-6">
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <div className="group relative w-full h-full">
+                <video
+                  src="/hydrolink.mp4"
+                  width={400}
+                  height={400}
+                  className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                  style={{ aspectRatio: "400/400", objectFit: "cover" }}
+                  muted
+                  loop
+                  preload="metadata"
+                  onLoadedMetadata={(e) => e.target.play()}
+                  onMouseEnter={(e) => e.target.play()}
+                  onMouseLeave={(e) => {
+                    e.target.pause();
+                    e.target.currentTime = 0;
+                  }}
                 />
               </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Yasiru Basnayake</h3>
-                <p className="text-sm text-muted-foreground">Software Engineer</p>
+
+
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">Hydrolink: Smart Water Tank</h3>
+                <p className="text-sm text-muted-foreground">HydroLink is an IoT device that transforms any domestic water tank into a smart one.</p>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Prabath Wijethilaka</h3>
-                <p className="text-sm text-muted-foreground">Product Manager</p>
+
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <img
+                src="/product.png"
+                alt="TechBot"
+                width={400}
+                height={400}
+                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                style={{ aspectRatio: "400/400", objectFit: "cover" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">TechBot</h3>
+                <p className="text-sm text-muted-foreground">STM32-based competition robot with machine vision and custom PCB.</p>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Anushka Samaranayake</h3>
-                <p className="text-sm text-muted-foreground">Designer</p>
+
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <img
+                src="/product.png"
+                alt="Cosmo Robot"
+                width={400}
+                height={400}
+                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                style={{ aspectRatio: "400/400", objectFit: "cover" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">Cosmo Robot</h3>
+                <p className="text-sm text-muted-foreground">Multi-functional robot with ATMEGA2560, featuring navigation and obstacle avoidance.</p>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Lasith Haputhantri</h3>
-                <p className="text-sm text-muted-foreground">Marketing Specialist</p>
+
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <img
+                src="/product.png"
+                alt="Criminal Face Generation"
+                width={400}
+                height={400}
+                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                style={{ aspectRatio: "400/400", objectFit: "cover" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">Criminal Face Generation</h3>
+                <p className="text-sm text-muted-foreground">AI-driven platform for forensic facial synthesis using stable diffusion models.</p>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Tashin Kavisham</h3>
-                <p className="text-sm text-muted-foreground">Software Engineer</p>
+
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <img
+                src="/product.png"
+                alt="Vision-Language Navigation"
+                width={400}
+                height={400}
+                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                style={{ aspectRatio: "400/400", objectFit: "cover" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">Vision-Language Navigation</h3>
+                <p className="text-sm text-muted-foreground">SLAM system using vision-language inputs for robot navigation.</p>
               </div>
             </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Wimukthi Bandara</h3>
-                <p className="text-sm text-muted-foreground">Product Designer</p>
-              </div>
-            </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Sajitha Madugalle</h3>
-                <p className="text-sm text-muted-foreground">Data Scientist</p>
-              </div>
-            </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-lg">
-            <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-              <span className="sr-only">View profile</span>
-            </Link>
-            <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-              <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                <img
-                  src="/user_icon.jpeg"
-                  alt="Avatar"
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                  style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">Dinujaya Wijewickrama</h3>
-                <p className="text-sm text-muted-foreground">DevOps Engineer</p>
+
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View</span>
+              </Link>
+              <img
+                src="/product.png"
+                alt="Ratatouille Micromouse"
+                width={400}
+                height={400}
+                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
+                style={{ aspectRatio: "400/400", objectFit: "cover" }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <h3 className="text-lg font-semibold">Ratatouille: Micromouse</h3>
+                <p className="text-sm text-muted-foreground">Fast micromouse for autonomous maze navigation using advanced sensors.</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+
+      <section id="awards" className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid gap-8 px-4 md:px-6 mx-auto">
+          <div className="space-y-3">
+            <h2 className="text-4xl font-bold mb-12 text-center">Awards</h2>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Recognizing excellence in our projects and contributions.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Award 1 */}
+            <div className="grid grid-cols-[200px_800px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img src="/thropy.jpg" alt="Award Trophy" className="w-16 h-16 justify-self-center" />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">Championship - SLIoT Challenge</h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Hydrolink</li>
+                <li>All island Internet of Things competition</li>
+              </ul>
+            </div>
+
+            {/* Award 2 */}
+            <div className="grid grid-cols-[200px_800px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img src="/thropy.jpg" alt="Award Trophy" className="w-16 h-16 justify-self-center" />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">Championship - Sri Lanka Arduino Challenge</h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Replace</li>
+                <li>IEEE Challenge sphere</li>
+              </ul>
+            </div>
+
+            {/* Award 3 */}
+            <div className="grid grid-cols-[200px_800px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img src="/thropy.jpg" alt="Award Trophy" className="w-16 h-16 justify-self-center" />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">1st Runnersup - Brainstorm</h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Steer-Safe</li>
+                <li>Healthcare Innovation Competition</li>
+              </ul>
+            </div>
+
+            {/* Award 4 */}
+            <div className="grid grid-cols-[200px_800px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+              <img src="/thropy.jpg" alt="Award Trophy" className="w-16 h-16 justify-self-center" />
+              <div className="self-center border-r-4 border-black px-4">
+                <h3 className="text-xl font-semibold text-center">1st Runnersup - Aurora</h3>
+              </div>
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+                <li>Project Name: Project Face Canvas</li>
+                <li>AI Ideathlon</li>
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <section id="team" className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid gap-8 px-4 md:px-6 mx-auto">
+          <div className="space-y-3">
+            <h2 className="text-4xl font-bold mb-12 text-center">Our Team</h2>
+
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Meet the talented individuals behind our success. Electronic and Telecommunications Engineering
+              Undergraduate University of Moratuwa.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Yasiru Basnayake</h3>
+                  <p className="text-sm text-muted-foreground">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Prabath Wijethilaka</h3>
+                  <p className="text-sm text-muted-foreground">Product Manager</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Anushka Samaranayake</h3>
+                  <p className="text-sm text-muted-foreground">Designer</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Lasith Haputhantri</h3>
+                  <p className="text-sm text-muted-foreground">Marketing Specialist</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Tashin Kavisham</h3>
+                  <p className="text-sm text-muted-foreground">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Wimukthi Bandara</h3>
+                  <p className="text-sm text-muted-foreground">Product Designer</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Sajitha Madugalle</h3>
+                  <p className="text-sm text-muted-foreground">Data Scientist</p>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <span className="sr-only">View profile</span>
+              </Link>
+              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <img
+                    src="/user_icon.jpeg"
+                    alt="Avatar"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
+                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Dinujaya Wijewickrama</h3>
+                  <p className="text-sm text-muted-foreground">DevOps Engineer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
@@ -531,7 +600,7 @@ export function MainScreenLanding() {
           variant="ghost"
           size="icon"
           className="bg-primary/30 text-primary-foreground hover:bg-primary/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring backdrop-blur-lg"
-          // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ArrowUpIcon className="w-6 h-6" />
           <span className="sr-only">Scroll to top</span>
