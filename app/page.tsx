@@ -1,14 +1,23 @@
-import { Main } from "next/document";
-import React from "react";
-import { MainScreen } from "@/components/component/mainScreen";
-import { MainScreenLanding } from "@/components/main-screen-landing";
-
+'use client';
+import React, { useEffect, useState } from "react";
+import { MainScreenLanding } from "@/components/MainScreenLanding";
+import { SplashScreen } from "@/components/splash";
 
 export default function Home() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+
+    // Cleanup the timeout if the component is unmounted
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen">
-      {/* <MainScreen /> */}
-      <MainScreenLanding /> 
+      {showSplash ? <SplashScreen /> : <MainScreenLanding />}
     </main>
   );
 }
