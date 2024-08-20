@@ -4,12 +4,18 @@ interface ProjectsProps {
   description: string;
   title: string;
   source: string;
+  image1: string;
+  image2: string;
+  image3: string;
 }
 
 export default function Projects({
   description,
   title,
   source,
+  image1,
+  image2,
+  image3
 }: ProjectsProps) {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
@@ -109,47 +115,27 @@ export default function Projects({
 
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
               <img
-                src="/placeholder.svg"
+                src={image1}
                 width={300}
                 height={200}
                 alt="Landscape 1"
                 className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
               <img
-                src="/placeholder.svg"
+                src={image2}
                 width={300}
                 height={200}
                 alt="Landscape 2"
                 className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
               <img
-                src="/placeholder.svg"
+                src={image3}
                 width={300}
                 height={200}
                 alt="Landscape 3"
                 className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
-              <img
-                src="/placeholder.svg"
-                width={300}
-                height={200}
-                alt="Landscape 4"
-                className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
-              />
-              <img
-                src="/placeholder.svg"
-                width={300}
-                height={200}
-                alt="Landscape 5"
-                className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
-              />
-              <img
-                src="/placeholder.svg"
-                width={300}
-                height={200}
-                alt="Landscape 6"
-                className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
-              />
+              
             </div>
           </div>
         </div>
