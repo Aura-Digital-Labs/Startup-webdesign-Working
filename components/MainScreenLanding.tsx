@@ -532,7 +532,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/yasiru.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -542,9 +542,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Yasiru Basnayake</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Software Engineer
-                  </p>
+                  {/* <p className="text-sm text-muted-foreground">
+                    Robitics / AI
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -555,7 +555,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/prabath.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -565,9 +565,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Prabath Wijethilaka</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Product Manager
-                  </p>
+                  {/* <p className="text-sm text-muted-foreground">
+                    FPGA / IoT
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -578,7 +578,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/Anushka.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -590,7 +590,7 @@ export function MainScreenLanding() {
                   <h3 className="text-lg font-semibold">
                     Anushka Samaranayake
                   </h3>
-                  <p className="text-sm text-muted-foreground">Designer</p>
+                  {/* <p className="text-sm text-muted-foreground">Designer</p> */}
                 </div>
               </div>
             </div>
@@ -601,7 +601,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/Lasith.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -611,9 +611,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Lasith Haputhantri</h3>
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     Marketing Specialist
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -624,7 +624,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/tashin.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -634,9 +634,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Tashin Kavisham</h3>
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     Software Engineer
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -647,7 +647,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/wimukthi.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -657,9 +657,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Wimukthi Bandara</h3>
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     Product Designer
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -670,7 +670,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/sajitha.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -680,9 +680,9 @@ export function MainScreenLanding() {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Sajitha Madugalle</h3>
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     Data Scientist
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -693,7 +693,7 @@ export function MainScreenLanding() {
               <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
                 <div className="relative h-24 w-24 overflow-hidden rounded-full">
                   <img
-                    src="/user_icon.jpeg"
+                    src="/Dinujaya.jpg"
                     alt="Avatar"
                     width={96}
                     height={96}
@@ -705,9 +705,9 @@ export function MainScreenLanding() {
                   <h3 className="text-lg font-semibold">
                     Dinujaya Wijewickrama
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  {/* <p className="text-sm text-muted-foreground">
                     DevOps Engineer
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
