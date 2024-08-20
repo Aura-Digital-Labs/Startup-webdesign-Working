@@ -3,6 +3,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { FaRobot, FaCamera, FaCode, FaWifi, FaBrush, FaMicrochip } from 'react-icons/fa'
 
 export function MainScreenLanding() {
   return (
@@ -117,7 +118,7 @@ export function MainScreenLanding() {
             <div className="grid gap-1">
               <h3 className="text-lg font-bold">Our History</h3>
               <p className="text-sm text-muted-foreground">
-                Aura Digital Labs was founded in 2015 with a vision to revolutionize the way businesses leverage technology.
+                Aura Digital Labs was founded in 2021 with a vision to revolutionize the way businesses leverage technology.
                 Over the years, we have grown to become a trusted partner for organizations across various industries.
               </p>
             </div>
@@ -130,48 +131,50 @@ export function MainScreenLanding() {
           <div className="space-y-3 mx-auto max-w-[800px]">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Services</h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Aura Digital Labs offers a comprehensive suite of digital transformation services to help your business thrive in the digital age.
+              Aura Digital Labs offers a comprehensive suite of advanced technology services to help your business stay ahead in a rapidly evolving digital landscape.
             </p>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <CodeIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">Web Development</h3>
+              <FaRobot className="h-10 w-10" />
+              <h3 className="text-lg font-bold">Robotics</h3>
               <p className="text-sm text-muted-foreground">
-                Cutting-edge web solutions that drive engagement and conversion.
+                Advanced robotic solutions that automate tasks and enhance productivity.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <SmartphoneIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">Mobile App Development</h3>
+              <FaCamera className="h-10 w-10" />
+              <h3 className="text-lg font-bold">Machine Vision</h3>
               <p className="text-sm text-muted-foreground">
-                Innovative mobile apps that deliver seamless user experiences.
+                Precision vision systems for automated inspection, identification, and control.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <DatabaseIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">Data Analytics</h3>
-              <p className="text-sm text-muted-foreground">Actionable insights to drive informed decision-making.</p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <CloudIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">Cloud Solutions</h3>
+              <FaCode className="h-10 w-10" />
+              <h3 className="text-lg font-bold">Software Development</h3>
               <p className="text-sm text-muted-foreground">
-                Scalable and secure cloud-based infrastructure and applications.
+                Custom software solutions designed to optimize performance and scalability.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <PowerIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">IT Consulting</h3>
+              <FaWifi className="h-10 w-10" />
+              <h3 className="text-lg font-bold">IoT Solutions</h3>
               <p className="text-sm text-muted-foreground">
-                Strategic guidance to align technology with your business goals.
+                Connected devices and systems that streamline operations and enhance user experiences.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
-              <RocketIcon className="h-10 w-10" />
-              <h3 className="text-lg font-bold">Digital Marketing</h3>
+              <FaBrush className="h-10 w-10" />
+              <h3 className="text-lg font-bold">Digital Design</h3>
               <p className="text-sm text-muted-foreground">
-                Tailored digital marketing strategies to drive growth and engagement.
+                Innovative digital designs that captivate and engage audiences.
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+              <FaMicrochip className="h-10 w-10" />
+              <h3 className="text-lg font-bold">Machine Learning & AI</h3>
+              <p className="text-sm text-muted-foreground">
+                Intelligent algorithms that drive data-driven decisions and automation.
               </p>
             </div>
           </div>
