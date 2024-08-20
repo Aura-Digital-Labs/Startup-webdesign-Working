@@ -254,29 +254,14 @@ export function MainScreenLanding() {
                 "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
               }
               title={"Hydrolink: Smart Water Tank"}
-              source={"/hydrolink.mp4"}
+              // source={"/hydrolink.mp4"}
+              image1={"/product.png"}
+              image2={"/prabath.jpg"}
+              image3={"/yasiru.jpg"}
+
             />
-            <Projects
-              description={
-                "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
-              }
-              title={"Hydrolink: Smart Water Tank"}
-              source={"/hydrolink.mp4"}
-            />
-            <Projects
-              description={
-                "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
-              }
-              title={"Hydrolink: Smart Water Tank"}
-              source={"/hydrolink.mp4"}
-            />
-            <Projects
-              description={
-                "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
-              }
-              title={"Hydrolink: Smart Water Tank"}
-              source={"/hydrolink.mp4"}
-            />
+      
+   
             {/* 
             <div className="group relative overflow-hidden rounded-lg">
               <Link href="#" className="absolute inset-0 z-10" prefetch={false}>

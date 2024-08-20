@@ -1,9 +1,11 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 interface ProjectsProps {
   description: string;
   title: string;
-  source: string;
+  source?: string;
   image1: string;
   image2: string;
   image3: string;
@@ -15,17 +17,20 @@ export default function Projects({
   source,
   image1,
   image2,
-  image3
+  image3,
 }: ProjectsProps) {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
 
+  const [hovered, setHovered] = useState(false);
+  const [currentImage, setCurrentImage] = useState(image1);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [image1, image2, image3];
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        popupRef.current &&
-        !popupRef.current.contains(event.target as Node)
-      ) {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
         setShowPopup(false);
       }
     };
@@ -34,7 +39,20 @@ export default function Projects({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showPopup]); // Add showPopup to the dependency array
+  }, []);
+
+  useEffect(() => {
+    // Update the image index every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 1000); // 1 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  useEffect(() => {
+    setCurrentImage(images[currentIndex]);
+  }, [currentIndex, images]);
 
   return (
     <div
@@ -42,28 +60,30 @@ export default function Projects({
       onClick={() => setShowPopup(true)}
     >
       <div className="relative w-full h-full">
-        <video
-          src={source}
-          width={400}
-          height={400}
-          className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-          style={{ aspectRatio: "1 / 1" }}
-          muted
-          loop
-          preload="metadata"
-          onLoadedMetadata={(e) => (e.target as HTMLVideoElement).play()}
-          onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
-          onMouseLeave={(e) => {
-            const video = e.target as HTMLVideoElement;
-            video.pause();
-            video.currentTime = 0;
+        <div
+          className="group relative overflow-hidden rounded-lg"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => {
+            setHovered(false);
+            setCurrentImage(image1); // Reset to first image when not hovered
           }}
-        />
-      </div>
+        >
+          <div className="relative w-full h-full">
+            <img
+              src={currentImage}
+              width={400}
+              height={400}
+              alt="Project Image"
+              className="rounded-md object-cover w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-105"
+              style={{ aspectRatio: "1 / 1" }}
+            />
+          </div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-sm">{description}</p>
+          <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+            <h3 className="text-lg font-semibold">{title}</h3>
+            <p className="text-sm">{description}</p>
+          </div>
+        </div>
       </div>
 
       {showPopup && (
@@ -84,17 +104,19 @@ export default function Projects({
 
             <h3 className="text-4xl font-bold mb-4 text-gray-900">{title}</h3>
             <p className="text-xl mb-4 text-gray-800">{description}</p>
-            <p className="text-xl mb-6 text-gray-800">
-              Source:{" "}
-              <a
-                href={source}
-                className="text-blue-600 underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Video
-              </a>
-            </p>
+            {source && (
+              <p className="text-xl mb-6 text-gray-800">
+                Source:{" "}
+                <a
+                  href={source}
+                  className="text-blue-600 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Video
+                </a>
+              </p>
+            )}
 
             <div className="mb-6">
               <h1 className="text-3xl font-bold mb-2">Technologies</h1>
@@ -104,7 +126,7 @@ export default function Projects({
             <div className="mb-6">
               <h2 className="text-2xl font-semibold mb-2">Description</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
                 cumque soluta veniam eligendi, aut, repellendus, deserunt
                 cupiditate repudiandae voluptate veritatis dolor a iste eaque
                 neque dicta nemo modi vel officia? Ad eos labore autem enim
@@ -135,7 +157,6 @@ export default function Projects({
                 alt="Landscape 3"
                 className="rounded-md object-cover aspect-[3/2] transition-transform duration-300 ease-in-out transform hover:scale-105"
               />
-              
             </div>
           </div>
         </div>
