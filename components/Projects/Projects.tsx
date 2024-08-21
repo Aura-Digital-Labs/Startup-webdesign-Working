@@ -6,6 +6,7 @@ interface ProjectsProps {
   description: string;
   title: string;
   source?: string;
+  more_details?: string;
   image1: string;
   image2: string;
   image3: string;
@@ -18,6 +19,7 @@ export default function Projects({
   image1,
   image2,
   image3,
+  more_details,
 }: ProjectsProps) {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement | null>(null);
@@ -126,12 +128,7 @@ export default function Projects({
             <div className="mb-6">
               <h2 className="text-2xl font-semibold mb-2">Description</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                cumque soluta veniam eligendi, aut, repellendus, deserunt
-                cupiditate repudiandae voluptate veritatis dolor a iste eaque
-                neque dicta nemo modi vel officia? Ad eos labore autem enim
-                laborum voluptatibus? Dolorem eligendi, aliquam vitae rem
-                recusandae, magni eius fuga, ea iste iure quae.
+             {more_details}
               </p>
             </div>
 
