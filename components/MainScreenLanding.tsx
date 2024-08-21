@@ -254,8 +254,22 @@ export function MainScreenLanding() {
                 "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
               }
               title={"Project Hydrolink"}
-              more_details={"HydroLink is an IoT device that transforms any domestic water tank into a smart one."}
-              technologies={"IoT"}
+              more_details={"Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"}
+              technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
+              // source={"/hydrolink.mp4"}
+              image1={"/product.png"}
+              image2={"/prabath.jpg"}
+              image3={"/yasiru.jpg"}
+
+            />
+
+<Projects
+              description={
+                "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
+              }
+              title={"Project Hydrolink"}
+              more_details={"Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"}
+              technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
               image2={"/prabath.jpg"}
