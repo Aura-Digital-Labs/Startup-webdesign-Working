@@ -91,10 +91,10 @@ export default function Projects({
       </div>
 
       {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/70 p-6 z-50 transition-opacity duration-500 ease-in-out opacity-100">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 p-6 z-50 transition-opacity duration-500 ease-in-out opacity-100 overflow-visible">
           <div
             ref={popupRef}
-            className="bg-background p-8 rounded-lg shadow-2xl text-black max-w-5xl w-full relative h-[80vh] overflow-auto transition-transform duration-500 ease-in-out transform scale-100 animate-popup popup-content"
+            className="bg-background p-8 rounded-lg shadow-2xl text-black max-w-5xl w-full relative h-[80vh] transition-transform duration-500 ease-in-out transform scale-105 animate-popup popup-content overflow-visible"
           >
             <button
               className="absolute top-4 right-4 text-3xl text-gray-800"
