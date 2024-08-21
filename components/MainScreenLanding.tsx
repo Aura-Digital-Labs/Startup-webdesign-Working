@@ -253,7 +253,7 @@ export function MainScreenLanding() {
               description={
                 "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
               }
-              title={"Hydrolink: Smart Water Tank"}
+              title={"Project Hydrolink"}
               more_details={"HydroLink is an IoT device that transforms any domestic water tank into a smart one."}
               technologies={"IoT"}
               // source={"/hydrolink.mp4"}

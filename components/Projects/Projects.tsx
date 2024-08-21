@@ -123,7 +123,7 @@ export default function Projects({
             )}
 
             <div className="mb-6">
-              <h1 className="text-3xl font-bold mb-2">Technologies</h1>
+              <h2 className="text-2xl font-semibold mb-2">Technologies</h2>
               {technologies}
             </div>
 
