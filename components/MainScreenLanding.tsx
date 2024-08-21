@@ -263,11 +263,11 @@ export function MainScreenLanding() {
 
             />
 
-<Projects
+            <Projects
               description={
-                "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
+                "Replace is an IoT device that transforms any wall plug and switch into a smart one."
               }
-              title={"Project Hydrolink"}
+              title={"Project Replace"}
               more_details={"Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"}
               technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
               // source={"/hydrolink.mp4"}
@@ -276,8 +276,8 @@ export function MainScreenLanding() {
               image3={"/yasiru.jpg"}
 
             />
-      
-   
+
+
             {/* 
             <div className="group relative overflow-hidden rounded-lg">
               <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
@@ -771,7 +771,7 @@ export function MainScreenLanding() {
           variant="ghost"
           size="icon"
           className="bg-primary/30 text-primary-foreground hover:bg-primary/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring backdrop-blur-lg"
-          // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ArrowUpIcon className="w-6 h-6" />
           <span className="sr-only">Scroll to top</span>
