@@ -354,7 +354,7 @@ export function MainScreenLanding() {
 
 
 
-            <Projects
+            {/* <Projects
               description={
                 ""
               }
@@ -366,7 +366,7 @@ export function MainScreenLanding() {
               image2={"/prabath.jpg"}
               image3={"/yasiru.jpg"}
 
-            />
+            /> */}
 
 
             {/* 
