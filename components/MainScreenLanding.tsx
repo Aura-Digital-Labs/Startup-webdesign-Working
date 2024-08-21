@@ -258,8 +258,8 @@ export function MainScreenLanding() {
               technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -271,8 +271,8 @@ export function MainScreenLanding() {
               technologies={"Analog Filter, Radio Frequncy Communication, High Speed PCB Design, Raspberrypi, wearable biomedical device design, Machine learning(Classification) "}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -285,8 +285,8 @@ export function MainScreenLanding() {
               technologies={"ROS (Noetic, Iron), Kinect 2 depth camera, Rtabmap, Turtlebot, Kalman, Ubuntu 22.04 LTS, Atmel Microchip Studio, CMake, libfreenect2, Localization, PID, PCB Design, SLAM, Python, SolidWorks"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -299,8 +299,8 @@ export function MainScreenLanding() {
               technologies={"Django, React Native, Firebase, Analog Circuit Design, Altium Designer, LTspice, NI Multisim ,Autoencoders (Machine Learning)"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -314,8 +314,8 @@ export function MainScreenLanding() {
               technologies={"Equatorial Mount Design, MEMS, PID, Mathematical Models, Celestial Databases, Mobile/Web App Development, PCB Design"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -330,8 +330,8 @@ export function MainScreenLanding() {
               technologies={"LLMs, PyTorch, Stable Diffusion models, Hugging Face Transformers, ONNX"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -347,8 +347,8 @@ export function MainScreenLanding() {
               technologies={"Sensor Technology, PCB Design with test points, Mouldable Enclousure Design, Google Firebase, Flutter"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             />
 
@@ -363,8 +363,8 @@ export function MainScreenLanding() {
               technologies={""}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
-              image2={"/prabath.jpg"}
-              image3={"/yasiru.jpg"}
+              image2={"/product.png"}
+              image3={"/product.png"}
 
             /> */}
 
