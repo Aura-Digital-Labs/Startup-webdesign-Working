@@ -257,10 +257,10 @@ export function MainScreenLanding() {
               more_details={"Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"}
               technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
               // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              image1={"/hydrolink2.png"}
+              image2={"/hydrolink4.png"}
+              image3={"/hydrolink3.png"}
+          
             />
 
             <Projects
