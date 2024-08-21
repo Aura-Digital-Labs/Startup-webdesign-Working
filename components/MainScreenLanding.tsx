@@ -255,6 +255,7 @@ export function MainScreenLanding() {
               }
               title={"Hydrolink: Smart Water Tank"}
               more_details={"HydroLink is an IoT device that transforms any domestic water tank into a smart one."}
+              technologies={"IoT"}
               // source={"/hydrolink.mp4"}
               image1={"/product.png"}
               image2={"/prabath.jpg"}
