@@ -725,7 +725,7 @@ export function MainScreenLanding() {
                   />
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold">Tashin Kavisham</h3>
+                  <h3 className="text-lg font-semibold">Tashin Kavishan</h3>
                   {/* <p className="text-sm text-muted-foreground">
                     Software Engineer
                   </p> */}
