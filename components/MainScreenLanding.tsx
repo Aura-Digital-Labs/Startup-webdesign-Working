@@ -3,6 +3,8 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
 import {
   FaRobot,
   FaCamera,
@@ -14,72 +16,183 @@ import {
 import Projects from "@/components/Projects/Projects";
 
 export function MainScreenLanding() {
+  // const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    if (!form.current) {
+      return;
+    }
+    emailjs
+      .sendForm(
+        "service_2kuohha",
+        "template_13tl8ne",
+        form.current,
+        "T6okvmv1rncTmho2P"
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          alert("Message sent successfully");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert("Failed to send message");
+        }
+      );
+  };
   return (
     <div className="flex flex-col min-h-dvh">
-      <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center backdrop-blur-md bg-white/20 shadow-sm z-50">
-        <Link
-          href="#"
-          className="flex items-center justify-center font-bold text-lg lg:text-xl pt-4 pl-0"
-        >
+      <header className="fixed top-0 left-0 right-0 px-4 lg:px-6 h-16 flex items-center justify-between backdrop-blur-md bg-white/20 shadow-sm z-50">
+        <Link href="#" className="flex items-center justify-start">
           <span className="sr-only">Aura Digital Labs</span>
           <img
             src="/logo.png"
             width="60"
             height="40"
             alt="Hero"
-            className="mx-auto overflow-hidden rounded-t-xl object-cover pb-4"
+            className="overflow-hidden rounded-t-xl object-cover"
           />
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="hidden md:flex gap-4 sm:gap-6 flex-1 justify-center">
           <Link
             href="#home"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             Home
           </Link>
           <Link
             href="#about"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             About
           </Link>
           <Link
             href="#services"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             Services
           </Link>
           <Link
             href="#projects"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             Projects
           </Link>
           <Link
             href="#team"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             Team
           </Link>
           <Link
             href="#contact"
-            className="text-sm font-semibold hover:underline underline-offset-4 mt-1"
+            className="text-sm font-semibold hover:underline underline-offset-4"
             prefetch={false}
           >
             Contact
           </Link>
+        </nav>
+        <a
+          href="https://api.whatsapp.com/send/?phone=94714745349"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button
-            className="h-7 px-3 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="hidden md:flex h-8 px-4 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             style={{ borderRadius: "30px", overflow: "hidden" }}
           >
             Get Started
           </Button>
-        </nav>
+        </a>
+
+        <div className="md:hidden flex items-center ml-4">
+          <button
+            id="menu-toggle"
+            className="text-primary-foreground hover:text-primary-600 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          id="mobile-menu"
+          className="absolute top-16 left-0 right-0 bg-white/80 shadow-lg rounded-lg p-4 flex flex-col items-center gap-4 z-40 hidden"
+        >
+          <Link
+            href="#home"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            Home
+          </Link>
+          <Link
+            href="#about"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            About
+          </Link>
+          <Link
+            href="#services"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            Services
+          </Link>
+          <Link
+            href="#projects"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            Projects
+          </Link>
+          <Link
+            href="#team"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            Team
+          </Link>
+          <Link
+            href="#contact"
+            className="text-sm font-semibold hover:underline underline-offset-4"
+            prefetch={false}
+          >
+            Contact
+          </Link>
+          <a
+            href="https://api.whatsapp.com/send/?phone=94714745349"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              className="hidden md:flex h-8 px-4 rounded-lg bg-primary/30 text-primary-foreground font-medium transition-colors hover:bg-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              style={{ borderRadius: "30px", overflow: "hidden" }}
+            >
+              Get Started
+            </Button>
+          </a>
+        </div>
       </header>
 
       <section id="home" className="w-full pt-12 md:pt-16 lg:pt-20 border-y">
@@ -108,24 +221,31 @@ export function MainScreenLanding() {
                     className="flex-1 h-12 px-4 border border-input focus:ring-1 focus:ring-primary focus:border-primary"
                     style={{ borderRadius: "30px", overflow: "hidden" }}
                   />
-                  <Button
-                    className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                    style={{ borderRadius: "30px", overflow: "hidden" }}
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=94714745349"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Get Started
-                  </Button>
+                    <Button
+                      className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                      style={{ borderRadius: "30px", overflow: "hidden" }}
+                    >
+                      Get Started
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
-
-            <img
-              src="/banner_main.jpg"
-              width="1270"
-              height="600"
-              alt="Hero"
-              style={{ borderRadius: "10px", overflow: "hidden" }}
-              className="mx-auto aspect-[16/10] overflow-hidden object-cover pb-4 transition-transform transition-filter duration-1000 ease-in-out hover:scale-105 hover:brightness-105"
-            />
+            <div className="flex items-center justify-center">
+              <img
+                src="/banner_main.jpg"
+                width="1270"
+                height="600"
+                alt="Hero"
+                style={{ borderRadius: "10px", overflow: "hidden" }}
+                className="mx-auto aspect-[16/10] overflow-hidden object-cover transition-transform transition-filter duration-1000 ease-in-out hover:scale-105 hover:brightness-105"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -153,9 +273,9 @@ export function MainScreenLanding() {
             <div className="grid gap-1">
               <h3 className="text-lg font-bold">Our Mission</h3>
               <p className="text-sm text-muted-foreground">
-                To be the trusted partner in our clients' digital transformation
-                journey, enabling them to stay ahead of the curve and achieve
-                their business goals.
+                To be the trusted partner in our clients&apos; digital
+                transformation journey, enabling them to stay ahead of the curve
+                and achieve their business goals.
               </p>
             </div>
             <div className="grid gap-1">
@@ -194,7 +314,8 @@ export function MainScreenLanding() {
             </p>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 1 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaRobot className="h-10 w-10" />
               <h3 className="text-lg font-bold">Robotics</h3>
               <p className="text-sm text-muted-foreground">
@@ -202,7 +323,8 @@ export function MainScreenLanding() {
                 productivity.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 2 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaCamera className="h-10 w-10" />
               <h3 className="text-lg font-bold">Machine Vision</h3>
               <p className="text-sm text-muted-foreground">
@@ -210,7 +332,8 @@ export function MainScreenLanding() {
                 identification, and control.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 3 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaCode className="h-10 w-10" />
               <h3 className="text-lg font-bold">Software Development</h3>
               <p className="text-sm text-muted-foreground">
@@ -218,7 +341,8 @@ export function MainScreenLanding() {
                 scalability.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 4 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaWifi className="h-10 w-10" />
               <h3 className="text-lg font-bold">IoT Solutions</h3>
               <p className="text-sm text-muted-foreground">
@@ -226,14 +350,16 @@ export function MainScreenLanding() {
                 enhance user experiences.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 5 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaBrush className="h-10 w-10" />
               <h3 className="text-lg font-bold">Digital Design</h3>
               <p className="text-sm text-muted-foreground">
                 Innovative digital designs that captivate and engage audiences.
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all hover:bg-accent hover:text-accent-foreground">
+            {/* Service 6 */}
+            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-background p-6 shadow-sm transition-all duration-300 ease-in-out hover:invert">
               <FaMicrochip className="h-10 w-10" />
               <h3 className="text-lg font-bold">Machine Learning & AI</h3>
               <p className="text-sm text-muted-foreground">
@@ -246,34 +372,39 @@ export function MainScreenLanding() {
       </section>
 
       <section id="projects" className="pb-20 pt-20 bg-background">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Projects</h2>
-          <div className="container grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:px-6">
+          <div className="container grid gap-6 px-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:px-6">
             <Projects
               description={
                 "HydroLink is an IoT device that transforms any domestic water tank into a smart one."
               }
               title={"Project Hydrolink"}
-              more_details={"Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"}
-              technologies={"Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"}
-              // source={"/hydrolink.mp4"}
+              more_details={
+                "Hydrolink is designed to convert any existing water tank into a smart, efficient system, providing real-time monitoring and control without causing any damage to the existing structure like never before. For more details visit www.hydrolink.lk"
+              }
+              technologies={
+                "Google Firebase, ESP Microcontroller, Altium Designer, Arduino, SolidWorks, Flutter"
+              }
               image1={"/hydrolink2.png"}
-              image2={"/hydrolink4.png"}
-              image3={"/hydrolink3.png"}
-          
+              image2={"/hydrolink3.png"}
+              image3={"/hydrolink4.png"}
             />
 
             <Projects
               description={
-                "A wearable device that utilizes machine learning and Electrooculography (EOG) signals to track a driver’s state of awareness in real-time"}
+                "A wearable device that utilizes machine learning and Electrooculography (EOG) signals to track a driver’s state of awareness in real-time"
+              }
               title={"Project Steer-Safe"}
-              more_details={"Steer Safe is a device which utilizes machine learning and electrooculography (EOG) signals to track a driver's state of awareness in real-time, providing early alerts and potentially saving lives."}
-              technologies={"Analog Filter, Radio Frequncy Communication, High Speed PCB Design, Raspberrypi, wearable biomedical device design, Machine learning(Classification) "}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              more_details={
+                "Steer Safe is a device which utilizes machine learning and electrooculography (EOG) signals to track a driver's state of awareness in real-time, providing early alerts and potentially saving lives."
+              }
+              technologies={
+                "Analog Filter, Radio Frequncy Communication, High Speed PCB Design, Raspberrypi, wearable biomedical device design, Machine learning(Classification) "
+              }
+              image1={"/Steersafe1.png"}
+              image2={"/Steersafe2.png"}
+              image3={"/Steersafe3.png"}
             />
 
             <Projects
@@ -281,13 +412,15 @@ export function MainScreenLanding() {
                 "Vision-based Automated Restaurant Robot is a cutting-edge project"
               }
               title={"Project Luna"}
-              more_details={"LUNA is Vision-based Automated Restaurant Robot is a cutting-edge project. This robot uses ROS and Kinect2 to navigate and interact autonomously within restaurant environments. It features a custom Kalman-based food stabilization tray designed to prevent beverage spillage, enhancing operational efficiency. The system integrates advanced sensor technologies and robotic functionalities, complemented by a custom restaurant environment planner front end for seamless interaction."}
-              technologies={"ROS (Noetic, Iron), Kinect 2 depth camera, Rtabmap, Turtlebot, Kalman, Ubuntu 22.04 LTS, Atmel Microchip Studio, CMake, libfreenect2, Localization, PID, PCB Design, SLAM, Python, SolidWorks"}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              more_details={
+                "LUNA is Vision-based Automated Restaurant Robot is a cutting-edge project. This robot uses ROS and Kinect2 to navigate and interact autonomously within restaurant environments. It features a custom Kalman-based food stabilization tray designed to prevent beverage spillage, enhancing operational efficiency. The system integrates advanced sensor technologies and robotic functionalities, complemented by a custom restaurant environment planner front end for seamless interaction."
+              }
+              technologies={
+                "ROS (Noetic, Iron), Kinect 2 depth camera, Rtabmap, Turtlebot, Kalman, Ubuntu 22.04 LTS, Atmel Microchip Studio, CMake, libfreenect2, Localization, PID, PCB Design, SLAM, Python, SolidWorks"
+              }
+              image1={"/placeholder.svg"}
+              image2={"/placeholder.svg"}
+              image3={"/placeholder.svg"}
             />
 
             <Projects
@@ -295,307 +428,145 @@ export function MainScreenLanding() {
                 "Replace is smart power outlet that can monitor and control the power usage of appliences intergrated with ML ."
               }
               title={"Project Replace"}
-              more_details={"Replace is an innovative system designed to interface with existing domestic electrical systems in Sri Lanka. It monitors the power usage of individual outlets, allowing for real-time tracking and management of energy consumption. By integrating the outlets with a home automation system, users can remotely control and optimize their energy usage, enhancing both convenience and efficiency. Additionally, Replace utilizes machine learning with autoencoders to detect anomalies in current and voltage waveforms, enabling early identification of potential issues and protecting devices from potential damage"}
-              technologies={"Django, React Native, Firebase, Analog Circuit Design, Altium Designer, LTspice, NI Multisim ,Autoencoders (Machine Learning)"}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              more_details={
+                "Replace is an innovative system designed to interface with existing domestic electrical systems in Sri Lanka. It monitors the power usage of individual outlets, allowing for real-time tracking and management of energy consumption. By integrating the outlets with a home automation system, users can remotely control and optimize their energy usage, enhancing both convenience and efficiency. Additionally, Replace utilizes machine learning with autoencoders to detect anomalies in current and voltage waveforms, enabling early identification of potential issues and protecting devices from potential damage"
+              }
+              technologies={
+                "Django, React Native, Firebase, Analog Circuit Design, Altium Designer, LTspice, NI Multisim ,Autoencoders (Machine Learning)"
+              }
+              image1={"/placeholder.svg"}
+              image2={"/placeholder.svg"}
+              image3={"/placeholder.svg"}
             />
-
 
             <Projects
               description={
                 "Earendel Pro-Track is an IoT-based Alt Azimuth telescope mount designed for automated celestial tracking"
               }
               title={"Project Earendel Pro-Track"}
-              more_details={"Earendel Pro-Track is an IoT-based Alt Azimuth telescope mount designed for automated celestial tracking. This device enhances the stargazing experience by allowing users to track distant celestial objects with precision. It features real-time updates, user-friendly controls, and educational value, making it an affordable solution for astronomy enthusiasts. Earendel Pro-Track includes a separate mobile app and web interface for easy control and management of the telescope, ensuring an accessible and interactive experience."}
-              technologies={"Equatorial Mount Design, MEMS, PID, Mathematical Models, Celestial Databases, Mobile/Web App Development, PCB Design"}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              more_details={
+                "Earendel Pro-Track is an IoT-based Alt Azimuth telescope mount designed for automated celestial tracking. This device enhances the stargazing experience by allowing users to track distant celestial objects with precision. It features real-time updates, user-friendly controls, and educational value, making it an affordable solution for astronomy enthusiasts. Earendel Pro-Track includes a separate mobile app and web interface for easy control and management of the telescope, ensuring an accessible and interactive experience."
+              }
+              technologies={
+                "Equatorial Mount Design, MEMS, PID, Mathematical Models, Celestial Databases, Mobile/Web App Development, PCB Design"
+              }
+              image1={"/placeholder.svg"}
+              image2={"/placeholder.svg"}
+              image3={"/placeholder.svg"}
             />
-
-
 
             <Projects
               description={
                 "The Stable Diffusion Based Criminal Face Generation Platform is an AI-driven tool that automates the creation of realistic criminal facial images from forensic data, improving law enforcement's accuracy and efficiency in suspect identification."
               }
-              title={"Project face canvas"}
-              more_details={"The Stable Diffusion Based Criminal Face Generation Platform is an advanced AI-driven solution that leverages stable diffusion models to generate accurate and realistic criminal facial images from forensic data. This platform automates the facial synthesis process, reducing reliance on manual sketching and minimizing subjective bias. By enhancing law enforcement's ability to accurately identify suspects, the platform contributes to more efficient and reliable forensic investigations."}
-              technologies={"LLMs, PyTorch, Stable Diffusion models, Hugging Face Transformers, ONNX"}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
+              title={"Project Face Canvas"}
+              more_details={
+                "The Stable Diffusion Based Criminal Face Generation Platform is an advanced AI-driven solution that leverages stable diffusion models to generate accurate and realistic criminal facial images from forensic data. This platform automates the facial synthesis process, reducing reliance on manual sketching and minimizing subjective bias. By enhancing law enforcement's ability to accurately identify suspects, the platform contributes to more efficient and reliable forensic investigations."
+              }
+              technologies={
+                "LLMs, PyTorch, Stable Diffusion models, Hugging Face Transformers, ONNX"
+              }
+              image1={"/placeholder.svg"}
+              image2={"/placeholder.svg"}
+              image3={"/placeholder.svg"}
             />
-
-
-
 
             <Projects
               description={
                 "This device measures key water quality parameters and provides feedback on water suitability based on standard benchmarks."
               }
-              title={"Industrial Portable Water Quality measuring Device"}
-              more_details={"This device measures water quality parameters such as pH, conductivity, temperature, and turbidity. It analyzes these values against standard benchmarks and provides user feedback on whether the water is suitable for use."}
-              technologies={"Sensor Technology, PCB Design with test points, Mouldable Enclousure Design, Google Firebase, Flutter"}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
-            />
-
-
-
-            {/* <Projects
-              description={
-                ""
+              title={"Industrial Portable Water Quality Measuring Device"}
+              more_details={
+                "This device measures water quality parameters such as pH, conductivity, temperature, and turbidity. It analyzes these values against standard benchmarks and provides user feedback on whether the water is suitable for use."
               }
-              title={""}
-              more_details={""}
-              technologies={""}
-              // source={"/hydrolink.mp4"}
-              image1={"/product.png"}
-              image2={"/product.png"}
-              image3={"/product.png"}
-
-            /> */}
-
-
-            {/* 
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              
-              <div className="group relative w-full h-full">
-                <video
-                  src="/hydrolink.mp4"
-                  width={400}
-                  height={400}
-                  className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                  style={{ aspectRatio: "400/400", objectFit: "cover" }}
-                  muted
-                  loop
-                  preload="metadata"
-                  onLoadedMetadata={(e) => e.target.play()}
-                  onMouseEnter={(e) => e.target.play()}
-                  onMouseLeave={(e) => {
-                    e.target.pause();
-                    e.target.currentTime = 0;
-                  }}
-                />
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">
-                  Hydrolink: Smart Water Tank
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  HydroLink is an IoT device that transforms any domestic water
-                  tank into a smart one.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              <img
-                src="/product.png"
-                alt="TechBot"
-                width={400}
-                height={400}
-                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">TechBot</h3>
-                <p className="text-sm text-muted-foreground">
-                  STM32-based competition robot with machine vision and custom
-                  PCB.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              <img
-                src="/product.png"
-                alt="Cosmo Robot"
-                width={400}
-                height={400}
-                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">Cosmo Robot</h3>
-                <p className="text-sm text-muted-foreground">
-                  Multi-functional robot with ATMEGA2560, featuring navigation
-                  and obstacle avoidance.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              <img
-                src="/product.png"
-                alt="Criminal Face Generation"
-                width={400}
-                height={400}
-                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">
-                  Criminal Face Generation
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  AI-driven platform for forensic facial synthesis using stable
-                  diffusion models.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              <img
-                src="/product.png"
-                alt="Vision-Language Navigation"
-                width={400}
-                height={400}
-                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">
-                  Vision-Language Navigation
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  SLAM system using vision-language inputs for robot navigation.
-                </p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View</span>
-              </Link>
-              <img
-                src="/product.png"
-                alt="Ratatouille Micromouse"
-                width={400}
-                height={400}
-                className="h-full w-full transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90 object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                <h3 className="text-lg font-semibold">
-                  Ratatouille: Micromouse
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Fast micromouse for autonomous maze navigation using advanced
-                  sensors.
-                </p>
-              </div>
-            </div>
-            */}
+              technologies={
+                "Sensor Technology, PCB Design with test points, Mouldable Enclosure Design, Google Firebase, Flutter"
+              }
+              image1={"/placeholder.svg"}
+              image2={"/placeholder.svg"}
+              image3={"/placeholder.svg"}
+            />
           </div>
         </div>
       </section>
 
-      <section id="awards" className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid gap-8 px-4 md:px-6 mx-auto">
-          <div className="space-y-3">
-            <h2 className="text-4xl font-bold mb-12 text-center">Awards</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Recognizing excellence in our projects and contributions.
+      <section id="awards" className="pt-20 pb-10 bg-muted flex justify-center">
+        <div className="container px-4 px-3 sm:px-3 md:px-6 mx-auto max-w-7xl">
+          <div className="space-y-6 text-center pb-5">
+            <h2 className="text-4xl font-bold mb-12">Honors & Awards</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground md:text-xl lg:text-base">
+              Recognizing excellence in our contributions. Our team has been
+              honored with numerous awards that highlight our commitment.
             </p>
           </div>
-
-          <div className="space-y-8">
+          <div className="grid gap-8">
             {/* Award 1 */}
-            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+            <div className="relative grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg bg-background transition-transform duration-300 ease-in-out hover:scale-105">
               <img
                 src="/thropy.jpg"
                 alt="Award Trophy"
-                className="w-16 h-16 justify-self-center"
+                className="w-16 h-16 justify-self-center relative z-10"
               />
-              <div className="self-center border-r-4 border-black px-4">
+              <div className="border-r-4 border-black px-4 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold text-center">
                   Championship - SLIoT Challenge
                 </h3>
               </div>
-              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center">
                 <li>Project Name: Project Hydrolink</li>
                 <li>All island Internet of Things competition</li>
               </ul>
             </div>
 
             {/* Award 2 */}
-            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+            <div className="relative grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg bg-background transition-transform duration-300 ease-in-out hover:scale-105">
               <img
                 src="/thropy.jpg"
                 alt="Award Trophy"
-                className="w-16 h-16 justify-self-center"
+                className="w-16 h-16 justify-self-center relative z-10"
               />
-              <div className="self-center border-r-4 border-black px-4">
+              <div className="border-r-4 border-black px-4 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold text-center">
                   Championship - Sri Lanka Arduino Challenge
                 </h3>
               </div>
-              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center">
                 <li>Project Name: Project Replace</li>
                 <li>IEEE Challenge sphere</li>
               </ul>
             </div>
 
             {/* Award 3 */}
-            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+            <div className="relative grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg bg-background transition-transform duration-300 ease-in-out hover:scale-105">
               <img
                 src="/thropy.jpg"
                 alt="Award Trophy"
-                className="w-16 h-16 justify-self-center"
+                className="w-16 h-16 justify-self-center relative z-10"
               />
-              <div className="self-center border-r-4 border-black px-4">
+              <div className="border-r-4 border-black px-4 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold text-center">
                   1st Runnersup - Brainstorm
                 </h3>
               </div>
-              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center">
                 <li>Project Name: Project Steer-Safe</li>
                 <li>Healthcare Innovation Competition</li>
               </ul>
             </div>
 
             {/* Award 4 */}
-            <div className="grid grid-cols-[100px_600px_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg">
+            <div className="relative grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-4 p-5 bg-white shadow-lg rounded-lg bg-background transition-transform duration-300 ease-in-out hover:scale-105">
               <img
                 src="/thropy.jpg"
                 alt="Award Trophy"
-                className="w-16 h-16 justify-self-center"
+                className="w-16 h-16 justify-self-center relative z-10"
               />
-              <div className="self-center border-r-4 border-black px-4">
+              <div className="border-r-4 border-black px-4 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold text-center">
                   1st Runnersup - Aurora
                 </h3>
               </div>
-              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center border-black">
+              <ul className="list-disc text-muted-foreground pl-4 flex flex-col justify-center">
                 <li>Project Name: Project Face Canvas</li>
                 <li>AI Ideathlon</li>
               </ul>
@@ -606,7 +577,7 @@ export function MainScreenLanding() {
 
       <section id="team" className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 mx-auto">
-          <div className="space-y-3">
+          <div className="space-y-3 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Our Team
             </h2>
@@ -616,193 +587,192 @@ export function MainScreenLanding() {
               Moratuwa.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/yasiru.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Yasiru Basnayake</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    Robitics / AI
-                  </p> */}
-                </div>
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-6">
+            {/* Team Member 1 */}
+            <a
+              href="https://www.linkedin.com/in/yasirubasnayake"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/yasiru.jpg"
+                  alt="Yasiru Basnayake"
+                  className="rounded-md"
+                />
+                <AvatarFallback>AP</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Yasiru Basnayake</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/prabath.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Prabath Wijethilaka</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    FPGA / IoT
-                  </p> */}
-                </div>
+            </a>
+
+            {/* Team Member 2 */}
+            <a
+              href="https://www.linkedin.com/in/prabath-wijethilaka-4950b220b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/prabath.jpg"
+                  alt="Prabath Wijethilaka"
+                  className="rounded-md"
+                />
+                <AvatarFallback>DJ</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Prabath Wijethilaka</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/Anushka.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">
-                    Anushka Samaranayake
-                  </h3>
-                  {/* <p className="text-sm text-muted-foreground">Designer</p> */}
-                </div>
+            </a>
+
+            {/* Team Member 3 */}
+            <a
+              href="https://www.linkedin.com/in/anushka-sandeepa-samaranayake-70536a227/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/Anushka.jpg"
+                  alt="Anushka Samaranayake"
+                  className="rounded-md"
+                />
+                <AvatarFallback>KR</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Anushka Samaranayake</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/Lasith.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Lasith Haputhantri</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    Marketing Specialist
-                  </p> */}
-                </div>
+            </a>
+
+            {/* Team Member 4 */}
+            <a
+              href="https://www.linkedin.com/in/lasith-haputhanthri-b2919a265/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/Lasith.jpg"
+                  alt="Lasith Haputhantri"
+                  className="rounded-md"
+                />
+                <AvatarFallback>TJ</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Lasith Haputhantri</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/tashin.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Tashin Kavishan</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    Software Engineer
-                  </p> */}
-                </div>
+            </a>
+          </div>
+
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-6 mt-8">
+            {/* Team Member 5 */}
+            <a
+              href="https://www.linkedin.com/in/tashin-kavishan-09908126a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/tashin.jpg"
+                  alt="Tashin Kavishan"
+                  className="rounded-md"
+                />
+                <AvatarFallback>HW</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Tashin Kavishan</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/wimukthi.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Wimukthi Bandara</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    Product Designer
-                  </p> */}
-                </div>
+            </a>
+
+            {/* Team Member 6 */}
+            <a
+              href="https://www.linkedin.com/in/wimukthi-madushan-bandara/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/wimukthi.jpg"
+                  alt="Wimukthi Bandara"
+                  className="rounded-md"
+                />
+                <AvatarFallback>KP</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Wimukthi Bandara</h3>
+                <p className="text-muted-foreground">
+                  Computer Science Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/sajitha.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Sajitha Madugalle</h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    Data Scientist
-                  </p> */}
-                </div>
+            </a>
+
+            {/* Team Member 7 */}
+            <a
+              href="https://www.linkedin.com/in/sajitha-madugalle-2a2172241/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/sajitha.jpg"
+                  alt="Sajitha Madugalle"
+                  className="rounded-md"
+                />
+                <AvatarFallback>NP</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Sajitha Madugalle</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View profile</span>
-              </Link>
-              <div className="flex flex-col items-center justify-center gap-2 p-4 transition-all duration-300 group-hover:bg-muted">
-                <div className="relative h-24 w-24 overflow-hidden rounded-full">
-                  <img
-                    src="/Dinujaya.jpg"
-                    alt="Avatar"
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"
-                    style={{ aspectRatio: "96/96", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">
-                    Dinujaya Wijewickrama
-                  </h3>
-                  {/* <p className="text-sm text-muted-foreground">
-                    DevOps Engineer
-                  </p> */}
-                </div>
+            </a>
+
+            {/* Team Member 8 */}
+            <a
+              href="https://www.linkedin.com/in/dinujaya3d/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center space-y-4 rounded-lg bg-background p-6 shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-2 hover:border-black"
+            >
+              <Avatar className="h-20 w-20">
+                <AvatarImage
+                  src="/Dinujaya.jpg"
+                  alt="Dinujaya Wijewickrama"
+                  className="rounded-md"
+                />
+                <AvatarFallback>SJ</AvatarFallback>
+              </Avatar>
+              <div className="grid gap-1 text-center">
+                <h3 className="text-xl font-bold">Dinujaya Wijewickrama</h3>
+                <p className="text-muted-foreground">
+                  Electronic and Telecommunications Engineering Undergraduate
+                </p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -815,29 +785,43 @@ export function MainScreenLanding() {
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a project in mind or need our expertise? Fill out the form
-              below and we'll get back to you as soon as possible.
+              below and we&apos;ll get back to you as soon as possible.
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-4">
-            <form className="grid gap-4">
-              <Input
+            <form ref={form} onSubmit={sendEmail} className="grid gap-4">
+              <input
                 type="text"
+                name="user_name"
                 placeholder="Name"
-                className="max-w-lg flex-1"
+                className="max-w-lg flex-1 p-2 rounded-sm border-3 shadow-sm"
+                required
               />
-              <Input
+              <input
                 type="email"
+                name="user_email"
                 placeholder="Email"
-                className="max-w-lg flex-1"
+                className="max-w-lg flex-1 p-2 rounded-sm border-3 shadow-sm"
+                required
               />
-              <Textarea placeholder="Message" className="max-w-lg flex-1" />
-              <Button type="submit">Submit</Button>
+              <textarea
+                name="message"
+                placeholder="Message"
+                className="max-w-lg flex-1 p-2 rounded-sm border-3 shadow-sm"
+                required
+              />
+              <input
+                type="submit"
+                value="Send"
+                className="h-12 px-5 bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                style={{ borderRadius: "30px", overflow: "hidden" }}
+              />
             </form>
             <div className="grid gap-2">
               <div className="flex items-center gap-2">
                 <PhoneIcon className="h-5 w-5 text-muted-foreground" />
                 <p className="text-sm text-muted-foreground">
-                  +1 (555) 123-4567
+                  +94 (070) ###-####
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -849,7 +833,7 @@ export function MainScreenLanding() {
               <div className="flex items-center gap-2">
                 <MapPinIcon className="h-5 w-5 text-muted-foreground" />
                 <p className="text-sm text-muted-foreground">
-                  123 Main Street, Anytown USA
+                  1st Lane, Moratuwa, Sri Lanka
                 </p>
               </div>
             </div>
@@ -862,7 +846,7 @@ export function MainScreenLanding() {
           variant="ghost"
           size="icon"
           className="bg-primary/30 text-primary-foreground hover:bg-primary/30 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring backdrop-blur-lg"
-        // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ArrowUpIcon className="w-6 h-6" />
           <span className="sr-only">Scroll to top</span>
@@ -926,7 +910,7 @@ export function MainScreenLanding() {
   );
 }
 
-function CloudIcon(props) {
+function CloudIcon(props: any) {
   return (
     <svg
       {...props}
@@ -945,7 +929,7 @@ function CloudIcon(props) {
   );
 }
 
-function CodeIcon(props) {
+function CodeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -965,7 +949,7 @@ function CodeIcon(props) {
   );
 }
 
-function DatabaseIcon(props) {
+function DatabaseIcon(props: any) {
   return (
     <svg
       {...props}
@@ -986,7 +970,7 @@ function DatabaseIcon(props) {
   );
 }
 
-function MailIcon(props) {
+function MailIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1006,7 +990,7 @@ function MailIcon(props) {
   );
 }
 
-function MapPinIcon(props) {
+function MapPinIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1026,7 +1010,7 @@ function MapPinIcon(props) {
   );
 }
 
-function MountainIcon(props) {
+function MountainIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1045,7 +1029,7 @@ function MountainIcon(props) {
   );
 }
 
-function PhoneIcon(props) {
+function PhoneIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1064,7 +1048,7 @@ function PhoneIcon(props) {
   );
 }
 
-function PowerIcon(props) {
+function PowerIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1084,7 +1068,7 @@ function PowerIcon(props) {
   );
 }
 
-function RocketIcon(props) {
+function RocketIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1106,7 +1090,7 @@ function RocketIcon(props) {
   );
 }
 
-function SmartphoneIcon(props) {
+function SmartphoneIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1126,7 +1110,7 @@ function SmartphoneIcon(props) {
   );
 }
 
-function ComputerIcon(props) {
+function ComputerIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1148,7 +1132,7 @@ function ComputerIcon(props) {
   );
 }
 
-function InfoIcon(props) {
+function InfoIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1169,7 +1153,7 @@ function InfoIcon(props) {
   );
 }
 
-function ArrowUpIcon(props) {
+function ArrowUpIcon(props: any) {
   return (
     <svg
       {...props}
@@ -1189,7 +1173,7 @@ function ArrowUpIcon(props) {
   );
 }
 
-function ArrowRightIcon(props) {
+function ArrowRightIcon(props: any) {
   return (
     <svg
       {...props}
